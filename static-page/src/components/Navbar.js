@@ -3,7 +3,11 @@ import logo from '../logo.svg';
 
 function Navbar() {
   return (
-    <h1>Navbar goes here</h1>
+    <nav>
+      <img src={logo} width="90px"/>
+      <h2>ReactFacts</h2>
+      <h3>React Course - Project 1</h3>
+    </nav>
   );
 }
 
