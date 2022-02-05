@@ -3,6 +3,7 @@ import React from 'react'
 function Card(props) {
   return (
     <section className="card">
+      {props.openSpots === 0 && <div className="card--badge">SOLD OUT</div>}
       <img src={`./images/${props.img}`} className="card--image"/>
       <div className="card--stats">
         <img src={"./images/star.png"} className="card--star"/>
