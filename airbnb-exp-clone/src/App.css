@@ -2,6 +2,15 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+.grey {
+  color: #918E9B;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 h1 {
@@ -10,6 +19,25 @@ h1 {
 
 body {
   margin: 0;
+}
+
+.card {
+  width: 260px;
+  font-size: 22px;
+}
+
+.card--image {
+  width: 100%;
+  border-radius: 9px;
+}
+
+.card--stats {
+  display: flex;
+  align-items: center;
+}
+
+.card--star {
+  height: 14px;
 }
 
 .hero--image {
@@ -30,18 +58,9 @@ body {
   font-size: 90px;
 }
 
-.hero {
-  font-family: 'Poppins';
-}
-
 nav {
-  height: 70px;
+  height: 110px;
   display: flex;
   padding: 20px 36px;
   box-shadow: 0px 3px 7px rgba(0,0,0,.1);
 }
-
-.nav--logo {
-  max-width: 100px;
-}
-
