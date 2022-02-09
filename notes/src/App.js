@@ -29,11 +29,15 @@ export default function App() {
     }
     
     function updateNote(text) {
-        setNotes(oldNotes => oldNotes.map(oldNote => {
-            return oldNote.id === currentNoteId
-                ? { ...oldNote, body: text }
-                : oldNote
-        }))
+        setNotes(oldNotes => {
+            const newOrder = [];
+            oldNotes.forEach(oldNote => {
+                oldNote.id === currentNoteId 
+                    ? newOrder.unshift({...oldNote, body: text})
+                    : newOrder.push(oldNote);
+            })
+            return newOrder;
+        })
     }
     
     function findCurrentNote() {
