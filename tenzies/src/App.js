@@ -20,11 +20,16 @@ function App() {
     )
   })
 
+  function rollDice() {
+    setDice(allNewDice());
+  }
+
   return (
     <main>
       <div className="dice-container">
         {diceElements}
       </div>
+      <button onClick={rollDice} className="roll-dice">Roll!</button>
     </main>
   );
 }
