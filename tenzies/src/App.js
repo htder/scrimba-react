@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Die from './Die';
-import {nanoid} from 'nanoid';
+import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
 
 function App() {
@@ -28,24 +28,24 @@ function App() {
 
   function generateNewDie() {
     return {
-        value: Math.floor((Math.random()) * 6) + 1,
-        isHeld: false,
-        id: nanoid(),
+      value: Math.floor((Math.random()) * 6) + 1,
+      isHeld: false,
+      id: nanoid(),
     }
   }
 
   function holdDice(id) {
     setDice((oldDice) => oldDice.map(die => {
-        return die.id === id 
-          ? {...die, isHeld: !die.isHeld}
-          : die
-      })
+      return die.id === id
+        ? { ...die, isHeld: !die.isHeld }
+        : die
+    })
     )
   }
 
   const diceElements = dice.map(item => {
     return (
-      <Die value={item.value} key={item.id} isHeld={item.isHeld} holdDice={() => holdDice(item.id)}/>
+      <Die value={item.value} key={item.id} isHeld={item.isHeld} holdDice={() => holdDice(item.id)} />
     )
   })
 
@@ -55,7 +55,7 @@ function App() {
       setTenzies(false);
     } else {
       setDice(oldDice => oldDice.map(die => {
-        return die.isHeld === false 
+        return die.isHeld === false
           ? generateNewDie()
           : die
       }))
