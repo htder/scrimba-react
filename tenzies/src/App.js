@@ -4,6 +4,7 @@ import Die from './Die';
 
 
 function App() {
+  const [dice, setDice] = useState(allNewDice());
 
   function allNewDice() {
     const numberArray = [];
@@ -13,19 +14,16 @@ function App() {
     return numberArray;
   }
 
+  const diceElements = dice.map((item, index) => {
+    return (
+      <Die value={item} key={index}/>
+    )
+  })
+
   return (
     <main>
       <div className="dice-container">
-        <Die value="1" />
-        <Die value="1" />
-        <Die value="1" />
-        <Die value="1" />
-        <Die value="1" />
-        <Die value="1" />
-        <Die value="1" />
-        <Die value="1" />
-        <Die value="1" />
-        <Die value="1" />
+        {diceElements}
       </div>
     </main>
   );
